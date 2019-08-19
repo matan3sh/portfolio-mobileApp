@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/src/screens/counter_home_screen.dart';
+import 'package:portfolio_app/src/screens/post_screen.dart';
+import 'package:portfolio_app/src/screens/project_detail_screen.dart';
 
 void main() => runApp(PortfolioApp());
 
@@ -8,16 +11,12 @@ class PortfolioApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        body: Center(
-          child:
-              Text(
-                'Welcome to $appTitle!', 
-                textDirection: TextDirection.ltr
-          ),
-        ),
-        appBar: AppBar(title: Text('$appTitle')),
-      ),
+      // home: CounterHomeScreen(title: appTitle),
+      home: PostScreen(),
+      routes: {
+        ProjectDetailScreen.route: (context) => ProjectDetailScreen()
+      },
     );
   }
 }
+
