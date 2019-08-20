@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/src/screens/counter_home_screen.dart';
 import 'package:portfolio_app/src/screens/post_screen.dart';
 import 'package:portfolio_app/src/screens/project_detail_screen.dart';
 
