@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_app/src/screens/post_screen.dart';
-import 'package:portfolio_app/src/screens/project_detail_screen.dart';
+import 'package:portfolio_app/src/screens/portfolio_home_screen.dart';
+import 'package:portfolio_app/src/screens/portfolio_detail_screen.dart';
 
 void main() => runApp(PortfolioApp());
 
@@ -11,10 +11,19 @@ class PortfolioApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(primarySwatch: Colors.blue),
       // home: CounterHomeScreen(title: appTitle),
-      home: PostScreen(),
-      routes: {
-        ProjectDetailScreen.route: (context) => ProjectDetailScreen()
-      },
+      home: PortfolioHomeScreen(),
+      // routes: {
+      //   PortfolioDetailScreen.route: (context) => PortfolioDetailScreen()
+      // },
+      onGenerateRoute: (RouteSettings settings) {
+        if (settings.name == PortfolioDetailScreen.route){
+          final PortfolioDetailArguments arguments = settings.arguments;
+          
+          return MaterialPageRoute(
+            builder: (contex) => PortfolioDetailScreen(portfolioId: arguments.id)
+          );
+        }
+      }
     );
   }
 }
