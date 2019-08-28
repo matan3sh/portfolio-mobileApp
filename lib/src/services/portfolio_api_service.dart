@@ -18,4 +18,10 @@ class PortfolioApiService {
     final List parsedPortfolios = json.decode(res.body);
     return parsedPortfolios.map((val) => Portfolio.fromJSON(val)).toList();
   }
+
+  Future<Portfolio> fetchPortfolioById(String id) async {
+    final res = await http.get('$url/portfolios/$id');
+    final parsedPortfolio = json.decode(res.body);
+    return Portfolio.fromJSON(parsedPortfolio);
+  }
 }
