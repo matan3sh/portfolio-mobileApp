@@ -31,11 +31,50 @@ class PortfolioDetailScreenState extends State<PortfolioDetailScreen> {
     return Scaffold(
       body: portfolio != null
           ? Column(
-              children: <Widget>[HeaderSection(portfolio: portfolio)],
+              children: <Widget>[
+                HeaderSection(portfolio: portfolio),
+                TitleSection(portfolio: portfolio)
+              ],
             )
           : Container(width: 0, height: 0),
       appBar: AppBar(title: Text('Project Detail')),
       bottomNavigationBar: BottomNavigation(),
+    );
+  }
+}
+
+class TitleSection extends StatelessWidget {
+  final Portfolio portfolio;
+
+  TitleSection({this.portfolio});
+
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(30.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+              Text(
+                portfolio.title,
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(
+                portfolio.shortInfo,
+                style: TextStyle(color: Colors.grey[500])
+              )
+            ],
+          ),
+        ),
+          Icon(
+            Icons.people,
+            color: Colors.blue[500]
+          ),
+          Text('${portfolio.joinedPeopleCount} People')
+        ],
+      )
     );
   }
 }
@@ -54,7 +93,9 @@ class HeaderSection extends StatelessWidget {
             width: width, height: 240.0, fit: BoxFit.cover),
         Container(
             width: width,
-            decoration: BoxDecoration(color: Colors.black.withOpacity(0.3)),
+            decoration: BoxDecoration(
+              color: Colors.black.withOpacity(0.3)
+            ),
             child: Padding(
               padding: EdgeInsets.only(top: 20.0, bottom: 20.0),
               child: ListTile(
@@ -63,17 +104,25 @@ class HeaderSection extends StatelessWidget {
                 backgroundImage: NetworkImage(
                     'https://cdn1.vectorstock.com/i/thumb-large/82/55/anonymous-user-circle-icon-vector-18958255.jpg'),
               ),
-              title: Text(portfolio.title,
-                  style: TextStyle(
-                      fontSize: 20.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
-              subtitle: Text(portfolio.shortInfo,
-                  style: TextStyle(
-                      fontSize: 17.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white)),
-            )))
+              title: Text(
+                portfolio.title,
+                style: TextStyle(
+                  fontSize: 20.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+                )
+              ),
+              subtitle: Text(
+                portfolio.shortInfo,
+                style: TextStyle(
+                  fontSize: 17.0,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white
+                )
+              ),
+            )
+          )
+        )
       ],
     );
   }
