@@ -73,6 +73,7 @@ class _PortfolioCard extends StatelessWidget {
         children: <Widget>[
           ListTile(
             leading: CircleAvatar(
+              radius: 25.0,
               backgroundImage: NetworkImage(portfolio.image),
             ),
             title: Text(portfolio.title),
