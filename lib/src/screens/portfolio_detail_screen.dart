@@ -4,6 +4,7 @@ import 'package:portfolio_app/src/services/portfolio_api_service.dart';
 import 'package:portfolio_app/src/widgets/bottom_navigation.dart';
 
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:video_player/video_player.dart';
 
 class PortfolioDetailScreen extends StatefulWidget {
   static final String route = '/portfolioDetail';
@@ -39,15 +40,13 @@ class PortfolioDetailScreenState extends State<PortfolioDetailScreen> {
                 Divider(),
                 TitleSection(portfolio),
                 Padding(
-                  padding: EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
+                    padding:
+                        EdgeInsets.only(left: 20.0, right: 20.0, bottom: 20.0),
                     child: Align(
-                    alignment: Alignment.centerLeft,
-                      child: Text(
-                        portfolio.description
-                    )
-                  )
-                ),
+                        alignment: Alignment.centerLeft,
+                        child: Text(portfolio.description))),
                 ImagesCarousel(portfolio),
+                VideoDemo()
               ],
             )
           : Container(width: 0, height: 0),
@@ -81,10 +80,7 @@ class TitleSection extends StatelessWidget {
                 ],
               ),
             ),
-            Icon(
-              Icons.people, 
-              color: color
-            ),
+            Icon(Icons.people, color: color),
             Text('${portfolio.joinedPeopleCount} People')
           ],
         ));
@@ -97,7 +93,7 @@ class AdditionalInfoSection extends StatelessWidget {
   AdditionalInfoSection(this.portfolio);
 
   String _capitilize(String word) {
-    if (word != null && word.isNotEmpty){
+    if (word != null && word.isNotEmpty) {
       return word[0].toUpperCase() + word.substring(1);
     }
     return '';
@@ -107,23 +103,13 @@ class AdditionalInfoSection extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(top: 12.0),
       child: Column(
-      children: <Widget>[
-          Text(
-            label,
-            style: TextStyle(
-              fontSize: 13.0, 
-              fontWeight: FontWeight.w400, 
-              color: color
-            )
-          ),
-          Text(
-            _capitilize(text),
-            style: TextStyle(
-              fontSize: 25.0, 
-              fontWeight: FontWeight.w500, 
-              color: color
-            )
-          )
+        children: <Widget>[
+          Text(label,
+              style: TextStyle(
+                  fontSize: 13.0, fontWeight: FontWeight.w400, color: color)),
+          Text(_capitilize(text),
+              style: TextStyle(
+                  fontSize: 25.0, fontWeight: FontWeight.w500, color: color))
         ],
       ),
     );
@@ -134,7 +120,7 @@ class AdditionalInfoSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
-        _buildColumn('CATEGORY',portfolio.category.name, color),
+        _buildColumn('CATEGORY', portfolio.category.name, color),
       ],
     );
   }
@@ -183,18 +169,17 @@ class ImagesCarousel extends StatelessWidget {
   final Portfolio portfolio;
   final List<String> imgList = [];
 
-  ImagesCarousel(this.portfolio){
-    imgList.add(portfolio.image);
-    imgList.add(portfolio.image);
-    imgList.add(portfolio.image);
-    imgList.add(portfolio.image);
-    imgList.add(portfolio.image);
+  ImagesCarousel(this.portfolio) {
+    imgList.add(portfolio.img1);
+    imgList.add(portfolio.img2);
+    imgList.add(portfolio.img3);
+    imgList.add(portfolio.img4);
   }
 
   Widget build(BuildContext context) {
     return CarouselSlider(
-      height: 200.0,
-      aspectRatio: 16/9,
+      height: 375.0,
+      aspectRatio: 16 / 9,
       viewportFraction: 0.8,
       initialPage: 0,
       enableInfiniteScroll: true,
@@ -214,12 +199,78 @@ class ImagesCarousel extends StatelessWidget {
               child: Image.network(
                 url,
                 fit: BoxFit.cover,
-                width: 1000.0,
+                width: 1250.0,
               ),
             ),
           );
         },
       ).toList(),
+    );
+  }
+}
+
+class VideoDemo extends StatefulWidget {
+  VideoDemo() : super();
+
+  final String title = "Video Demo";
+
+  @override
+  VideoDemoState createState() => VideoDemoState();
+}
+
+class VideoDemoState extends State<VideoDemo> {
+
+  VideoPlayerController _controller;
+  Future<void> _initializeVideoPlayerFuture;
+
+  @override
+  void initState() {
+    _controller = VideoPlayerController.network('https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+    _initializeVideoPlayerFuture = _controller.initialize();
+    _controller.setLooping(true);
+    _controller.setVolume(1.0);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Video Demo"),
+      ),
+      body: FutureBuilder(
+        future: _initializeVideoPlayerFuture,
+        builder: (context, snapshot){
+          if(snapshot.connectionState == ConnectionState.done){
+            return AspectRatio(
+              aspectRatio: _controller.value.aspectRatio,
+              child: VideoPlayer(_controller),
+            );
+          }else{
+            return Center(
+              child: CircularProgressIndicator(),
+            );
+          }
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          setState(() {
+            if(_controller.value.isPlaying) {
+              _controller.pause();
+            }else{
+              _controller.play();
+            }
+          });
+        },
+        child: Icon(_controller.value.isPlaying ? Icons.pause : Icons.play_arrow),
+      ),
     );
   }
 }

@@ -17,7 +17,11 @@ const portfolioSchema = new Schema({
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now },
   portfolioCreator: { type: Schema.Types.ObjectId, ref: 'User' },
-  joinedPeople: [{type: Schema.Types.ObjectId, ref: 'User'}]
+  joinedPeople: [{type: Schema.Types.ObjectId, ref: 'User'}],
+  img1: { type: String, required: true },
+  img2: { type: String, required: true },
+  img3: { type: String, required: true },
+  img4: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Portfolio', portfolioSchema );

@@ -55,7 +55,11 @@ module.exports = {
       "status": "active",
       "category": category1Id,
       "joinedPeople": [user2Id],
-      "portfolioCreator": user1Id
+      "portfolioCreator": user1Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     },
     {
       "_id": portfolio2Id,
@@ -74,7 +78,11 @@ module.exports = {
       "status": "active",
       "category": category2Id,
       "joinedPeople": [user3Id],
-      "portfolioCreator": user2Id
+      "portfolioCreator": user2Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     },
     {
       "_id": portfolio3Id,
@@ -93,7 +101,11 @@ module.exports = {
       "status": "active",
       "category": category1Id,
       "joinedPeople": [user1Id, user3Id],
-      "portfolioCreator": user2Id
+      "portfolioCreator": user2Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     },
     {
       "_id": portfolio4Id,
@@ -112,7 +124,11 @@ module.exports = {
       "status": "active",
       "category": category1Id,
       "joinedPeople": [user1Id, user3Id],
-      "portfolioCreator": user2Id
+      "portfolioCreator": user2Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     },
     {
       "_id": portfolio5Id,
@@ -131,7 +147,11 @@ module.exports = {
       "status": "active",
       "category": category4Id,
       "joinedPeople": [user1Id, user3Id],
-      "portfolioCreator": user2Id
+      "portfolioCreator": user2Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     },
     {
       "_id": portfolio6Id,
@@ -150,7 +170,11 @@ module.exports = {
       "status": "active",
       "category": category1Id,
       "joinedPeople": [user1Id, user3Id],
-      "portfolioCreator": user2Id
+      "portfolioCreator": user2Id,
+      "img1": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F04%2Fmarvel-studios-avengers-endgame-phase-four-projects-1.jpg?q=75&w=800&cbr=1&fit=max",
+      "img2": "https://nerdist.com/wp-content/uploads/2019/03/Captain-Marvel-NN-featured-1200x676.jpg",
+      "img3": "https://cdn.vox-cdn.com/thumbor/TAzotU1RnNkUJ7RwFtu7Rn1Ntcw=/0x0:1688x2500/1200x0/filters:focal(0x0:1688x2500):no_upscale()/cdn.vox-cdn.com/uploads/chorus_asset/file/11614195/InfinityWar5aabd55fed5fa.jpg",
+      "img4": "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2019%2F02%2Favengers-endgame-costume-leak-orville-redenbacher-1.jpg?q=75&w=800&cbr=1&fit=max"
     }
   ],
   "users": [

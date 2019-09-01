@@ -6,6 +6,10 @@ class Portfolio {
   // final String location;
   final String title;
   final String image;
+  final String img1;
+  final String img2;
+  final String img3;
+  final String img4;
   final String description;
   final String shortInfo;
   final Category category;
@@ -24,6 +28,10 @@ class Portfolio {
       // this.processedLocation = parsedJson['processedLocation'] ?? '',
       this.title = parsedJson['title'] ?? '',
       this.image = parsedJson['image'] ?? '',
+      this.img1 = parsedJson['img1'] ?? '',
+      this.img2 = parsedJson['img2'] ?? '',
+      this.img3 = parsedJson['img3'] ?? '',
+      this.img4 = parsedJson['img4'] ?? '',
       this.description = parsedJson['description'] ?? '',
       this.shortInfo = parsedJson['shortInfo'] ?? '',
       this.startDate = parsedJson['startDate'] ?? '',
